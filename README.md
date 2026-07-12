@@ -276,6 +276,20 @@ Ran 16 experiments: 4 strategies × 4 models × 200 questions.
 
 ---
 
+## Experimental Figures
+
+Detailed result visualizations are available in the
+[`figures`](figures/) directory.
+
+| Figure | Description |
+|---|---|
+| [Baseline vs ICE](figures/fig1_baseline_vs_ice.png) | Hallucination rates before and after ICE |
+| [Fix-to-Break Analysis](figures/fig2_fix_break.png) | Corrections produced versus correct answers damaged |
+| [Scaling Behaviour](figures/fig3_scaling.png) | ICE performance across model sizes |
+| [Hallucination Types](figures/fig4_types.png) | Distribution of hallucination categories |
+| [Score Distribution](figures/fig5_distribution.png) | Evaluation-score distribution |
+| [Answer Movements](figures/fig6_movements.png) | Classification changes from baseline to ICE |
+
 ## Key Findings
 
 **1. Self-verification works but is model-size dependent.**
@@ -301,19 +315,20 @@ Qwen2.5-7B achieved 0% hallucination on TruthfulQA, suggesting the model has mem
 ## Repository Structure
 
 ```
-├── ICE_FINAL_BATCHED.ipynb     # Final production notebook (batched, A100)
-├── outputs/
-│   ├── baseline_*.jsonl        # Raw baseline answers per model
-│   ├── ice_*.jsonl             # ICE pipeline answers per model
-│   └── findings.txt            # Auto-generated results summary
-├── figures/
-│   ├── fig1_baseline_vs_ice.png
-│   ├── fig2_fix_break.png
-│   ├── fig3_scaling.png
-│   ├── fig4_types.png
-│   ├── fig5_distribution.png
-│   └── fig6_movements.png
-└── README.md
+├── README.md
+├── LICENSE
+│
+├── demo/
+│   └── ice_pipeline_pseudocode.py
+│
+└── figures/
+    ├── fig1_baseline_vs_ice.png
+    ├── fig2_fix_break.png
+    ├── fig3_scaling.png
+    ├── fig4_types.png
+    ├── fig5_distribution.png
+    ├── fig6_movements.png
+    └── README.md
 ```
 
 ---
